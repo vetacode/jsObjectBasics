@@ -91,7 +91,11 @@ console.log(obj.__proto__); // [object Object] - the value is an object, didn't 
 
 //Props existence
 let user = {};
-alert(user.noSuchProperty === undefined); // true means "no such property"
+console.log(user.noSuchProperty === undefined); // true means "no such property"
 
 //Special operator 'in':
 'key' in object;
+let user = { name: 'John', age: 30 };
+
+console.log('age' in user); // true, user.age exists
+console.log('blabla' in user); // false, user.blabla doesn't exist
