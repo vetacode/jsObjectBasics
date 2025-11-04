@@ -47,3 +47,23 @@ let tas = {
   [comp + 'Computers']: 5,
 };
 console.log('isi tas:', tas); //isi tas: { appleComputers: 5 }
+
+//props value shorthand
+function makeUser(name, age) {
+  return {
+    name: name,
+    age: age,
+    // ...other properties
+  };
+}
+
+let user = makeUser('John', 30);
+console.log(user.name); // John
+
+function makeUser(name, age) {
+  return {
+    name, // same as name: name
+    age, // same as age: age
+    // ...
+  };
+}
