@@ -22,3 +22,5 @@ console.log(Object.keys(user));
 console.log(Object.values(user));
 
 //combining forEach
+Object.keys(user).forEach((key) => console.log(key));
+Object.values(user).forEach((value) => console.log(value));
