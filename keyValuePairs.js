@@ -40,5 +40,10 @@ let bag = {
   [fruit]: 10,
   taste: 'delicious',
 };
-
 console.log(bag[fruit]);
+
+let comp = 'apple';
+let tas = {
+  [comp + 'Computers']: 5,
+};
+console.log('isi tas:', tas); //isi tas: { appleComputers: 5 }
