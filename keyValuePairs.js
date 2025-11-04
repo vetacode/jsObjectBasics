@@ -32,3 +32,13 @@ let admin = {
 
 let kunci = 'umur';
 console.log(admin[kunci]);
+
+//Computed Props
+let fruit = 'banana';
+
+let bag = {
+  [fruit]: 10,
+  taste: 'delicious',
+};
+
+console.log(bag[fruit]);
