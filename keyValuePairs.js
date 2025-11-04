@@ -75,5 +75,16 @@ let obj = {
   let: 2,
   return: 3,
 };
-
 console.log(obj.for + obj.let + obj.return); // 6
+
+let obj2 = {
+  0: 'test', // same as "0": "test"
+};
+
+// both alerts access the same property (the number 0 is converted to string "0")
+console.log(obj2['0']); // test
+console.log(obj2[0]); // test (same property)
+
+let obj3 = {};
+obj3.__proto__ = 5; // assign a number
+console.log(obj.__proto__); // [object Object] - the value is an object, didn't work as intended
