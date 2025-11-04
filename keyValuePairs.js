@@ -88,3 +88,10 @@ console.log(obj2[0]); // test (same property)
 let obj3 = {};
 obj3.__proto__ = 5; // assign a number
 console.log(obj.__proto__); // [object Object] - the value is an object, didn't work as intended
+
+//Props existence
+let user = {};
+alert(user.noSuchProperty === undefined); // true means "no such property"
+
+//Special operator 'in':
+'key' in object;
