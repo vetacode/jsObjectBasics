@@ -99,3 +99,15 @@ let user = { name: 'John', age: 30 };
 
 console.log('age' in user); // true, user.age exists
 console.log('blabla' in user); // false, user.blabla doesn't exist
+
+let user = { age: 30 };
+let key = 'age';
+console.log(key in user); // true, property "age" exists
+
+//why op 'in' should exist?
+
+let obj = {
+  test: undefined,
+};
+console.log(obj.test); // it's undefined, so - no such property?
+console.log('test' in obj); // true, the property does exist!
