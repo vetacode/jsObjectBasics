@@ -48,3 +48,28 @@ for (let code in codes) {
 console.log(String(Math.trunc(Number('49')))); // "49", same, integer property
 console.log(String(Math.trunc(Number('+49')))); // "49", not same "+49" ⇒ not integer property
 console.log(String(Math.trunc(Number('1.2')))); // "1", not same "1.2" ⇒ not integer property
+
+//Non integer order
+let user2 = {
+  name: 'John',
+  surname: 'Smith',
+};
+user2.age = 25; // add one more
+
+// non-integer properties are listed in the creation order
+for (let prop in user2) {
+  console.log(prop); // name, surname, age
+}
+
+//Fixing integer order
+let codes3 = {
+  '+49': 'Germany',
+  '+41': 'Switzerland',
+  '+44': 'Great Britain',
+  // ..,
+  '+1': 'USA',
+};
+
+for (let code in codes3) {
+  console.log(+code); // 49, 41, 44, 1 //to fix the issue with the phone codes, we can “cheat” by making the codes non-integer. Adding a plus "+" sign before each code is enough.
+}
