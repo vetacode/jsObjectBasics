@@ -67,3 +67,13 @@ function makeUser(name, age) {
     // ...
   };
 }
+
+//props name limitations = there is no limitations on props name, as long as string or symbol.
+// these properties are all right
+let obj = {
+  for: 1,
+  let: 2,
+  return: 3,
+};
+
+console.log(obj.for + obj.let + obj.return); // 6
