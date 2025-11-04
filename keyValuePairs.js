@@ -22,3 +22,13 @@ console.log(hero['like coding']);
 //deleting
 delete hero['like coding'];
 console.log(hero);
+
+//Square bracket other usage: can access variable of keys (propery's name)
+let admin = {
+  name: 'Gina',
+  job: 'programmer',
+  umur: 29,
+};
+
+let kunci = 'umur';
+console.log(admin[kunci]);
