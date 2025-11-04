@@ -106,7 +106,7 @@ console.log(key in user); // true, property "age" exists
 
 //why op 'in' should exist?
 
-let obj = {
+let obj4 = {
   test: undefined,
 };
 console.log(obj.test); // it's undefined, so - no such property?
