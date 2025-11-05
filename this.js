@@ -84,18 +84,18 @@ admin2.f(); // Admin  (this == admin)
 admin2['f'](); // Admin (dot or square brackets access the method – doesn't matter)
 
 //Arrow function doesn't has own this. It will captured from lexically bind this from surrounding function
-let user = {
+let user4 = {
   firstName: 'Ilya',
   sayHi() {
     let arrow = () => console.log(this.firstName);
     arrow();
   },
 };
-user.sayHi(); // "Ilya"
+user4.sayHi(); // "Ilya"
 //that is handy when we want the outer this
 
 //if its use regular function:
-let user = {
+let user5 = {
   firstName: 'Ilya',
   sayHi() {
     let regular = function () {
@@ -104,4 +104,45 @@ let user = {
     regular();
   },
 };
-user.sayHi(); //undefined (or throws in strict mode)
+user5.sayHi(); //undefined (or throws in strict mode)
+
+/* TASK1
+Using "this" in object literal
+importance: 5
+Here the function makeUser returns an object.
+
+What is the result of accessing its ref? Why?
+
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+}
+
+let user = makeUser();
+
+alert( user.ref.name ); // What's the result?
+*/
+
+function makeUser() {
+  return {
+    name: 'John',
+    ref: this,
+  };
+}
+
+let user6 = makeUser();
+
+console.log(user6.ref.name); //undefined. coz this.ref is undefined, coz this inside makeUser() is a function not a method
+
+function makeUser2() {
+  return {
+    name: 'John',
+    ref() {
+      return this;
+    },
+  };
+}
+let user7 = makeUser2();
+console.log(user7.ref().name); //John
