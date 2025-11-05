@@ -54,7 +54,31 @@ let user2 = {
   sayHi() {
     // "this" is the "current object"
     console.log(this.name);
+    return 'belajar this';
   },
 };
 
 user2.sayHi(); // John
+
+let admin = user2; //now user2 and admin has the same object reference
+console.log(admin.sayHi());
+
+//this is not bound, can be used in any function
+//this is free, and evaluated during the run-time in each function
+let user3 = { name: 'John' };
+let admin2 = { name: 'Admin' };
+
+function sayHi() {
+  console.log(this.name);
+}
+
+// use the same function in two objects
+user3.f = sayHi;
+admin2.f = sayHi;
+
+// these calls have different this
+// "this" inside the function is the object "before the dot"
+user3.f(); // John  (this == user)
+admin2.f(); // Admin  (this == admin)
+
+admin2['f'](); // Admin (dot or square brackets access the method – doesn't matter)
