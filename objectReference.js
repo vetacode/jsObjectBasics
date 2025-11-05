@@ -29,9 +29,47 @@ const user2 = {
 user2.name = 'Pete'; //the changes is only the properties, but the value of valriable user2 itself is still constant
 console.log(user2.name); // Pete
 
-//but if we change the variable:
-user2 = {
-  name: 'Wick',
+// //but if we change the variable:
+// user2 = {
+//   name: 'Wick',
+// };
+
+// console.log(user2.name); //it will result an error, assignment to constant variable
+
+//Cloning & merging, Object.assign
+let user3 = {
+  name: 'Troy',
+  age: 35,
+  isSingle: true,
 };
 
-console.log(user2.name); //it will result an error, assignment to constant variable
+let clone = {};
+for (let key in user3) {
+  clone[key] = user3[key];
+}
+console.log('Cloning object:', clone);
+
+//another way is using Object.assign, syntax: Object.assign(dest, ...sources)
+let user4 = {
+  name: 'Troy',
+  age: 35,
+  isSingle: true,
+};
+
+let add1 = { isBroke: true };
+let add2 = { isHopeless: false };
+Object.assign(user4, add1, add2);
+
+console.log(user4);
+
+//cloning simple object
+let user5 = {
+  name: 'Troy',
+  age: 35,
+  isSingle: true,
+};
+
+let clone2 = {};
+Object.assign(clone2, user5);
+
+console.log(clone2.age);
