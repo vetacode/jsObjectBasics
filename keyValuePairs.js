@@ -31,7 +31,7 @@ let admin = {
 };
 
 let kunci = 'umur';
-console.log(admin[kunci]);
+console.log('value admin:', admin[kunci]);
 
 //Computed Props
 let fruit = 'banana';
@@ -57,8 +57,8 @@ function makeUser(name, age) {
   };
 }
 
-let user = makeUser('John', 30);
-console.log(user.name); // John
+let user2 = makeUser('John', 30);
+console.log(user2.name); // John
 
 function makeUser(name, age) {
   return {
@@ -90,19 +90,19 @@ obj3.__proto__ = 5; // assign a number
 console.log(obj.__proto__); // [object Object] - the value is an object, didn't work as intended
 
 //Props existence
-let user = {};
-console.log(user.noSuchProperty === undefined); // true means "no such property"
+let user3 = {};
+console.log(user3.noSuchProperty === undefined); // true means "no such property"
 
 //Special operator 'in':
-'key' in object;
-let user = { name: 'John', age: 30 };
+// 'key' in object;
+let user4 = { name: 'John', age: 30 };
 
-console.log('age' in user); // true, user.age exists
-console.log('blabla' in user); // false, user.blabla doesn't exist
+console.log('age' in user4); // true, user.age exists
+console.log('blabla' in user4); // false, user.blabla doesn't exist
 
-let user = { age: 30 };
+let user5 = { age: 30 };
 let key = 'age';
-console.log(key in user); // true, property "age" exists
+console.log(key in user5); // true, property "age" exists
 
 //why op 'in' should exist?
 
