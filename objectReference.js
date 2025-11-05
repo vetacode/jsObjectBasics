@@ -21,3 +21,17 @@ let x = {};
 let y = {}; // two independent objects
 
 console.log(x == y); // false
+
+//object's properties can be free to change, even with cons
+const user2 = {
+  name: 'John',
+};
+user2.name = 'Pete'; //the changes is only the properties, but the value of valriable user2 itself is still constant
+console.log(user2.name); // Pete
+
+//but if we change the variable:
+user2 = {
+  name: 'Wick',
+};
+
+console.log(user2.name); //it will result an error, assignment to constant variable
