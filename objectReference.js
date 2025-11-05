@@ -36,7 +36,7 @@ console.log(user2.name); // Pete
 
 // console.log(user2.name); //it will result an error, assignment to constant variable
 
-//Cloning & merging, Object.assign
+//Cloning & merging, Object.assign (it is shallow cloning)
 let user3 = {
   name: 'Troy',
   age: 35,
@@ -73,3 +73,40 @@ let clone2 = {};
 Object.assign(clone2, user5);
 
 console.log(clone2.age);
+
+//nested cloning (deep clone)
+let user6 = {
+  name: 'John',
+  sizes: {
+    height: 182,
+    width: 50,
+  },
+};
+
+console.log(user6.sizes.height); // 182
+
+let clone3 = Object.assign({}, user6);
+
+console.log(clone3.sizes.height);
+
+user6.sizes.height = 190;
+console.log(clone3.sizes.height); // 190. the clone3 variable props also changes coz still share the same reference, it had not deep copy
+
+//how to make 2 separate objects? solution: deep cloning or structured cloning.
+//deep cloning use a cloning loop that examines each value of user[key] and, if it’s an object, then replicate its structure as well.
+
+let user7 = {
+  name: 'John',
+  sizes: {
+    height: 182,
+    width: 50,
+  },
+};
+
+let clone4 = structuredClone(user);
+
+console.log(user7.sizes === clone4.sizes); // false, different objects
+
+// user and clone are totally unrelated now
+user7.sizes.width = 60; // change a property from one place
+console.log(clone4.sizes.width); // 50, not related
