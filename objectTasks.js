@@ -11,12 +11,9 @@ Remove the property name from the object.
 */
 
 let user = {};
+user.name = 'John';
+user.surename = 'Smith';
+user.name = 'Pete';
+delete user.name;
 
-let user2 = {
-  name: 'John',
-  surename: 'Smith',
-};
-
-user2.name = 'Pete';
-
-delete user2.name;
+console.log(user);
