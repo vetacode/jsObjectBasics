@@ -93,7 +93,7 @@ user6.sizes.height = 190;
 console.log(clone3.sizes.height); // 190. the clone3 variable props also changes coz still share the same reference, it had not deep copy
 
 //how to make 2 separate objects? solution: deep cloning or structured cloning.
-//deep cloning use a cloning loop that examines each value of user[key] and, if it’s an object, then replicate its structure as well.
+//deep cloning use a cloning loop that examines each value of user[key] and, if it’s an object, then replicate its structure as well. syntax: structuredClone(object)
 
 let user7 = {
   name: 'John',
@@ -103,7 +103,7 @@ let user7 = {
   },
 };
 
-let clone4 = structuredClone(user);
+let clone4 = structuredClone(user7);
 
 console.log(user7.sizes === clone4.sizes); // false, different objects
 
