@@ -73,3 +73,18 @@ let codes3 = {
 for (let code in codes3) {
   console.log(+code); // 49, 41, 44, 1 //to fix the issue with the phone codes, we can “cheat” by making the codes non-integer. Adding a plus "+" sign before each code is enough.
 }
+
+//drilling
+let user4 = {
+  name: 'Sora',
+  gender: 'female',
+  age: 26,
+  isEmployee: false,
+};
+
+for (let key in user4) {
+  console.log('prop name user4:', key);
+}
+for (let key in user4) {
+  console.log('value user4:', user4[key]);
+}
