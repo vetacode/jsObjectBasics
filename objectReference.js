@@ -110,3 +110,17 @@ console.log(user7.sizes === clone4.sizes); // false, different objects
 // user and clone are totally unrelated now
 user7.sizes.width = 60; // change a property from one place
 console.log(clone4.sizes.width); // 50, not related
+
+//it supports circular reference also
+let user8 = {};
+// let's create a circular reference:
+// user.me references the user itself
+user8.me = user8;
+
+let clone5 = structuredClone(user8);
+console.log(clone5.me === clone5); // true
+
+//But it doesnt support object with function props
+structuredClone({
+  f: function () {}, // error
+});
