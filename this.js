@@ -43,3 +43,18 @@ let rumah2 = {
 };
 
 console.log(rumah2.isHuge());
+
+//THIS: to access the object
+//This. is the object 'before the dot'
+//this. is the 'current object'
+let user2 = {
+  name: 'John',
+  age: 30,
+
+  sayHi() {
+    // "this" is the "current object"
+    console.log(this.name);
+  },
+};
+
+user2.sayHi(); // John
