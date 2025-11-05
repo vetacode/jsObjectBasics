@@ -82,3 +82,26 @@ user3.f(); // John  (this == user)
 admin2.f(); // Admin  (this == admin)
 
 admin2['f'](); // Admin (dot or square brackets access the method – doesn't matter)
+
+//Arrow function doesn't has own this. It will captured from lexically bind this from surrounding function
+let user = {
+  firstName: 'Ilya',
+  sayHi() {
+    let arrow = () => console.log(this.firstName);
+    arrow();
+  },
+};
+user.sayHi(); // "Ilya"
+//that is handy when we want the outer this
+
+//if its use regular function:
+let user = {
+  firstName: 'Ilya',
+  sayHi() {
+    let regular = function () {
+      console.log(this.firstName);
+    };
+    regular();
+  },
+};
+user.sayHi(); //undefined (or throws in strict mode)
