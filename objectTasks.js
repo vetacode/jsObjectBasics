@@ -42,9 +42,8 @@ function isEmpty(obj) {
   }
   return true;
 }
-
-console.log(schedule);
+console.log(isEmpty(schedule));
 
 schedule['8:30'] = 'get up';
 
-console.log(schedule);
+console.log(isEmpty(schedule));
