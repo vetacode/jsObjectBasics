@@ -70,9 +70,11 @@ let user5 = {
 };
 
 let clone2 = {};
-Object.assign(clone2, user5);
+Object.assign(clone2, user5); //it makes copy of different/separate object reference
 
-console.log(clone2.age);
+clone2.age = 40;
+console.log('user5:', user5.age); //35. it still have own reference (different object)
+console.log(clone2.age); //40. it has difference ref already
 
 //nested cloning (deep clone)
 let user6 = {
@@ -120,7 +122,7 @@ user8.me = user8;
 let clone5 = structuredClone(user8);
 console.log(clone5.me === clone5); // true
 
-//But it doesnt support object with function props
-structuredClone({
-  f: function () {}, // error
-});
+// //But it doesnt support object with function props
+// structuredClone({
+//   f: function () {}, // error
+// });
