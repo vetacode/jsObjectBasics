@@ -16,3 +16,6 @@ function User2(name) {
 
 let aladin = new User2('Ali');
 console.log(aladin); //Alibaba, overwrites Ali that passed by aladin variable
+
+//we can omit parenthesis (tanda kurung) klo ga passing argumen. But this is not a best practices
+// let alibaba = new User;
