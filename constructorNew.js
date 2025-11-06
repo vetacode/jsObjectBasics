@@ -120,12 +120,14 @@ alert(accumulator.value); // shows the sum of these values
 
 function Accumulator(startingValue) {
   this.value = startingValue;
+
   this.read = function () {
-    this.value += 3;
+    this.value += 2;
   };
 }
 
 let accumulator = new Accumulator(1);
+accumulator.read();
 accumulator.read();
 accumulator.read();
 
