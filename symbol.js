@@ -32,3 +32,30 @@ for (let key in user2) console.log(key); // name, age (no symbols)
 
 // the direct access by the symbol works
 console.log('Direct: ' + user2[id5]); // Direct: 123
+
+//Global symbol
+// read from the global registry
+let id6 = Symbol.for('id'); // if the symbol did not exist, it is CREATED
+
+// read it again (maybe from another part of the code)
+let idAgain = Symbol.for('id');
+
+// the same symbol
+console.log(id6 === idAgain); // true
+
+//Symbol.keyFor: to access symbol desctiption
+// get symbol by name
+let sym = Symbol.for('name');
+let sym2 = Symbol.for('id');
+
+// get name by symbol
+console.log(Symbol.keyFor(sym)); // name
+console.log(Symbol.keyFor(sym2)); // id
+
+let globalSymbol = Symbol.for('name');
+let localSymbol = Symbol('name');
+
+console.log(Symbol.keyFor(globalSymbol)); // name, global symbol
+console.log(Symbol.keyFor(localSymbol)); // undefined, not global
+
+console.log(localSymbol.description); // name
