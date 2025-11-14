@@ -20,13 +20,15 @@ for (let key in user) {
 //converting to Array
 console.log(Object.keys(user));
 console.log(Object.values(user));
+console.log(Object.entries(user));
+console.log(Object(user));
+console.log(user);
 
 //combining forEach
 Object.keys(user).forEach((key) => console.log(key));
 Object.values(user).forEach((value) => console.log(value));
 
 //integers ordered by ascending
-
 let codes = {
   49: 'Germany',
   41: 'Switzerland',
