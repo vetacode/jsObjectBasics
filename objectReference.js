@@ -49,6 +49,7 @@ for (let key in user3) {
 }
 console.log('Cloning object:', clone);
 
+//OBJECT.ASSIGN()
 //another way is using Object.assign, syntax: Object.assign(dest, ...sources)
 let user4 = {
   name: 'Troy',
