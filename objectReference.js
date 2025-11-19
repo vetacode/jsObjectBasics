@@ -57,11 +57,11 @@ let user4 = {
   isSingle: true,
 };
 
-let add1 = { isBroke: true };
+let add1 = 'Broke';
 let add2 = { isHopeless: false };
 Object.assign(user4, add1, add2);
 
-console.log(user4);
+console.log(user4); //will sort by key
 
 //cloning simple object
 let user5 = {
