@@ -1,3 +1,5 @@
+'use strict';
+
 let user = {
   name: 'John',
   age: 30,
@@ -105,7 +107,7 @@ let user5 = {
     return regular();
   },
 };
-user5.sayHi(); //undefined (or throws in strict mode)
+user5.sayHi(); //undefined (or throws windows in strict mode)
 
 /* TASK1
 Using "this" in object literal
