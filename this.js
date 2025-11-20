@@ -4,10 +4,10 @@ let user = {
 };
 
 user.sayHi = function () {
-  console.log('Hello!');
+  return 'Hello!';
 };
 
-user.sayHi(); // Hello!
+console.log(user.sayHi()); // Hello!
 
 console.log(user);
 //A function that is a property of an object is called its method.
@@ -17,12 +17,13 @@ console.log(user);
 let mobil = {};
 
 function terbang() {
-  console.log('ga bisa donk!');
+  return 'ga bisa donk!';
 }
 
 mobil.terbang = terbang; //masukin key terbang ke obj mobil dgn value function terbang ==> terbang adalah method
 
-mobil.terbang();
+console.log(mobil);
+console.log(mobil.terbang());
 
 //Cara penulisan method
 let ukuran = 300;
@@ -50,15 +51,15 @@ console.log(rumah2.isHuge());
 let user2 = {
   name: 'John',
   age: 30,
-
   sayHi() {
     // "this" is the "current object"
+    console.log(this);
     console.log(this.name);
     return 'belajar this';
   },
 };
 
-user2.sayHi(); // John
+console.log(user2.sayHi()); //belajar this
 
 let admin = user2; //now user2 and admin has the same object reference
 console.log(admin.sayHi());
@@ -87,11 +88,11 @@ admin2['f'](); // Admin (dot or square brackets access the method – doesn't ma
 let user4 = {
   firstName: 'Ilya',
   sayHi() {
-    let arrow = () => console.log(this.firstName);
-    arrow();
+    let arrow = () => this.firstName;
+    return arrow();
   },
 };
-user4.sayHi(); // "Ilya"
+console.log(user4.sayHi()); // "Ilya"
 //that is handy when we want the outer this
 
 //if its use regular function:
@@ -101,7 +102,7 @@ let user5 = {
     let regular = function () {
       console.log(this.firstName);
     };
-    regular();
+    return regular();
   },
 };
 user5.sayHi(); //undefined (or throws in strict mode)
