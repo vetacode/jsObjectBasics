@@ -16,7 +16,6 @@ let hero = {
   'like coding': true,
 };
 
-//Accessing or Getting multiword keys
 console.log(hero['like coding']);
 
 //deleting
@@ -29,6 +28,8 @@ let admin = {
   job: 'programmer',
   umur: 29,
 };
+
+console.log(admin['umur']);
 
 let kunci = 'umur';
 console.log('value admin:', admin[kunci]);
