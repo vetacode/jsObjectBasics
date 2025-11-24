@@ -19,6 +19,7 @@ for (let key in user) {
 
 //CLONE OBJECT USER with for..in
 //HASILNYA adalah SHALLOW COPY object
+//JANGAN DIAPAKAI klo mau clone nested object secara mendalam → pakai structuredClone(), JSON parse/stringify, atau library lodash.
 let clone = {};
 for (let key in user) {
   clone[key] = user[key];
