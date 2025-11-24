@@ -17,6 +17,14 @@ for (let key in user) {
   console.log(user[key]); //get all the value props
 }
 
+//CLONE OBJECT USER with for..in
+//HASILNYA adalah SHALLOW COPY object
+let clone = {};
+for (let key in user) {
+  clone[key] = user[key];
+}
+console.log(clone);
+
 //converting to Array
 console.log(Object.keys(user));
 console.log(Object.values(user));
