@@ -59,3 +59,6 @@ console.log(Symbol.keyFor(globalSymbol)); // name, global symbol
 console.log(Symbol.keyFor(localSymbol)); // undefined, not global
 
 console.log(localSymbol.description); // name
+
+const message = 'hello';
+message();
