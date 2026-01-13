@@ -1,11 +1,15 @@
 let user = {}; // user has no address
 
+// console.log(user?.address.street); // Error: Cannot read properties of undefined (reading 'street')
 console.log(user?.address?.street); // undefined (no error)
+// console.log(user.address.street); // Error: Cannot read properties of undefined (reading 'street')
 
 let user2 = null;
 
-console.log(user?.address); // undefined
-console.log(user?.address?.street); // undefined
+// console.log(user2.address); // Error: Cannot read properties of null (reading 'address')
+console.log(user2?.address); // undefined
+console.log(user2?.address.street); // undefined
+// console.log(user2.address.street); // Eror: Cannot read properties of null (reading 'address')
 
 //Please note: the ?. syntax makes optional the value BEFORE it, but not any further.
 

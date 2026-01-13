@@ -16,7 +16,7 @@ user.surename = 'Smith';
 user.name = 'Pete';
 delete user.name;
 
-console.log(user);
+console.log(user); //{ surename: 'Smith' }
 
 /*
 Check for emptiness
